@@ -9,3 +9,8 @@ geometry: margin=1in
 ...
 
 \newpage
+
+
+# Synthèse de l'article
+# Étude de l'implémentation
+# Expérimentations
