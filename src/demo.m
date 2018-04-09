@@ -20,8 +20,9 @@ close all;
 
 imgName = input('Enter image name [lena.png]: ', 's');
 if isempty(imgName)
-    imgName = 'lena.png';
+    imgName = 'img/lena.png';
 end
+imgName = 'img/' + imgName;
 img = imread(imgName);
 
 percentage = 0.01;%choose percentage of regained pixels
