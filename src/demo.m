@@ -17,21 +17,32 @@
 % mex efan_mex.cpp
 % ==========================================
 close all;
-img = imread('lena.png');
+
+imgName = input('Enter image name [lena.png]: ', 's');
+if isempty(imgName)
+    imgName = 'lena.png';
+end
+img = imread(imgName);
+
 percentage = 0.01;%choose percentage of regained pixels
 
 s = size(img);
 sz = s(1)*s(2);
 rng('default');%choose seed for random number generator
+%row vector containing sz unique integers selected randomly from 1 to sz inclusive.
 randvec = randperm(sz,sz);
+%round to nearest int
 numpixels = round(sz*percentage);
 randind = randvec(1:numpixels);
 M = zeros([s(1) s(2)]);%mask
 M(randind) = 1;
+imwrite(M(img), 'mask.png');
 %--------------------------------------------------------------------------
 tic
 outimg = efan_mex(img,M);
 toc
 %--------------------------------------------------------------------------
+imwrite(outimg, 'out.png');
 imshow(outimg);
 
+exit;
