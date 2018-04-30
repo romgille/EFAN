@@ -53,6 +53,7 @@ finale, et la complexité de l'algorithme est indépendante de l'état de dété
 * **Peak Signal-to-Noise Ratio - PSNR**
     $$ PSNR = -10\log_{10}\frac{e_{MSE}}{S^2} $$
 * **Structural SIMilarity - SSIM**
+    Le Structural SIMilarity
 
 
 # Étude de l'implémentation
