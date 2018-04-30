@@ -18,12 +18,7 @@
 % ==========================================
 close all;
 
-imgName = input('Enter image name [lena.png]: ', 's');
-if isempty(imgName)
-    imgName = 'img/lena.png';
-end
-imgName = 'img/' + imgName;
-img = imread(imgName);
+img = imread('../img/lena.png');
 
 percentage = 0.01;%choose percentage of regained pixels
 
@@ -37,13 +32,13 @@ numpixels = round(sz*percentage);
 randind = randvec(1:numpixels);
 M = zeros([s(1) s(2)]);%mask
 M(randind) = 1;
-imwrite(M(img), 'mask.png');
+imwrite(M(img), '../img/mask.png');
 %--------------------------------------------------------------------------
 tic
 outimg = efan_mex(img,M);
 toc
 %--------------------------------------------------------------------------
-imwrite(outimg, 'out.png');
+imwrite(outimg, '../img/out.png');
 imshow(outimg);
 
 exit;
