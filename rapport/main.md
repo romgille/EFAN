@@ -47,8 +47,8 @@ finale, et la complexité de l'algorithme est indépendante de l'état de dété
     calcule la différence au carré entre les pixels d'une image A et une image B, fait la somme de
     ces différences et divise cette somme par le nombre total de pixels. 
     Le désavantage de cette métrique, est sa dépendance avec le codage des pixels des images. Une
-    image codée en 8 bits avec un MSE de 100 ne représente pas la même qualité qu'une image codée en
-    10 bits pour le même MSE.
+    image codée en 8 bits avec un MSE de 100 ne représentera pas la même qualité qu'une image codée
+    en 10 bits pour le même MSE.
     $$ e_{MSE} = \frac{1}{M N} \sum_{n=1}^{M} \sum_{m=1}^{N}[\hat{g}(n, m) - g(n, m)]^2 $$
 * **Peak Signal-to-Noise Ratio - PSNR**
     $$ PSNR = -10\log_{10}\frac{e_{MSE}}{S^2} $$
