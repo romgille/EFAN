@@ -48,13 +48,13 @@ if [[ $1 == "tv" || $1 == "all" ]]; then
 
     if [ $# -eq 2 ]; then
         # create the random mask of pixels with 0.01% of the image
-        ./randmask Bernoulli:0.05 $IMG/$2 $IMG/mask.png
+        ./randmask Bernoulli:0.95 $IMG/$2 $IMG/mask.png
 
         # apply the mask on masked.png
         ./applymask $IMG/$2 $IMG/mask.png $IMG/masked.png
     else
         # create the random mask of pixels with 0.01% of the image
-        ./randmask Bernoulli:0.05 $IMG/lena.png $IMG/mask.png
+        ./randmask Bernoulli:0.95 $IMG/lena.png $IMG/mask.png
 
         # apply the mask on masked.png
         ./applymask $IMG/lena.png $IMG/mask.png $IMG/masked.png
