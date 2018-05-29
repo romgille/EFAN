@@ -65,7 +65,7 @@ applymask: $(APPLYMASK_OBJECTS)
 	$(CC) -c $(ALLCFLAGS) $< -o $@
 
 clean:
-	$(RM) $(TVINPAINT_OBJECTS) $(RANDMASK_OBJECTS) $(APPLYMASK_OBJECTS) \
+	$(RM) -v $(TVINPAINT_OBJECTS) $(RANDMASK_OBJECTS) $(APPLYMASK_OBJECTS) \
 	tvinpaint randmask applymask
 
 rebuild: clean all

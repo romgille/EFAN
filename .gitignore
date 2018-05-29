@@ -1,3 +1,5 @@
 *.pdf
 *.mexa64
 out/*
+img/mask.png
+img/masked.png
