@@ -71,7 +71,7 @@ if [[ $1 == "tv" || $1 == "all" ]]; then
         ./applymask $IMG/lena.png $IMG/mask.png $IMG/masked.png
 
     fi
-    time ./tvinpaint $IMG/mask.png 1e3 $IMG/masked.png $OUT/lena_tv.bmp
+    time ./tvinpaint $IMG/mask.png 1e3 $IMG/masked.png $OUT/out_tv.bmp
 
     cd ../..
 fi
