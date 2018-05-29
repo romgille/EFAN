@@ -33,13 +33,33 @@ inpainting**, le **Exemplar and search based image inpainting**, le **PDE based 
 
 * **Hybrid Inpainting**
 
-Le principal avantage de l'EFAN contrairement aux autres algorithmes qui sont très gourmand en
-ressources, est sa complexité en $O(n)$ avec $n$, le nombre de pixels contenus dans l'image 
-finale, et la complexité de l'algorithme est indépendante de l'état de détérioration de l'image.
+Le principal avantage de l'EFAN contrairement aux autres algorithmes est sa complexité extrêmement
+faible. Une complexité en $O(n)$ avec $n$, le nombre de pixels contenus dans l'image finale. La 
+complexité de l'algorithme est également indépendante de l'état de détérioration de l'image.
+
 
 ## Applications
 * **Super-résolution**
+
+  La Super-résolution utilise plusieurs images et les aligne pour obtenir une nouvelle image avec
+  une plus grande résolution. Cette méthode est appelée Exemplar-based super-resolution. 
+  Une autre méthode appelée Single-image super-resolution a été théorisée et publiée par 
+  l'International Conference on Computer Vision (ICCV) de 2009. Ici pour effectuer une super 
+  résolution, une seule et même image est utilisée.
+
+  ![Super-resolution exemple](https://s14-eu5.startpage.com/cgi-bin/serveimage?url=https%3A%2F%2Fwww.dpreview.com%2Ffiles%2Fp%2Farticles%2F5972459795%2Fgoogle4.png&sp=91f1001c305e8c8a93a4151a732367e7)
+  *Exemple d'utilisation de la Super-résolution pour augmenter la résolution de l'image d'origine*
+
+
 * **Dématriçage**
+
+  Le dématriçage aussi appelé débayerisation est un algorithme utilisé pour restaurer une image en 
+  couleur à partir des échantillons de couleurs incomplets émis par un capteur d'image. 
+
+  ![Demosaicing exemple](https://ngi-user-guide.readthedocs.io/en/latest/images/bayer_demosaic_detail.png)
+  *Exemple d'utilisation du dématriçage pour corriger les artefacts dans l'image d'origine (première
+  image)* 
+
 
 ## Mesures de la qualité d'une image
 * **Mean-Squared Error - MSE**
@@ -51,12 +71,39 @@ finale, et la complexité de l'algorithme est indépendante de l'état de dété
     en 10 bits pour le même MSE.
 
     $$ e_{MSE} = \frac{1}{M N} \sum_{n=1}^{M} \sum_{m=1}^{N}[\hat{g}(n, m) - g(n, m)]^2 $$
+
+    Si les deux images comparées sont identiques, le MSE vaudra alors 0.
+
 * **Peak Signal-to-Noise Ratio - PSNR**
-    Le Peak Signal-to-Noise Ratio 
+    Le Peak Signal-to-Noise Ratio abrégé PSNR, est un autre outil pour mesurer la qualité d'une
+    image. Le PSNR est notamment utilisé pour comparer la qualité de la reconstruction des codecs de
+    compresssions avec perte. L'intérêt du PSNR réside dans sa non dépendance avec le codage des
+    pixels des images contrairement au MSE. Le PSNR contourne ce problème en pondérant le MSE en
+    fonction de l'encodage de l'image.
 
     $$ PSNR = -10\log_{10}\frac{e_{MSE}}{S^2} $$
+
+    $S$ est le pixel avec la plus grande valeur dans l'image, le PSNR est une mesure en décibel
+    (dB). En l'absence de bruits, ou en d'autres termes, si l'image d'origine et l'image comparée
+    sont identiques, la valeur du PSNR est infinie.
+
 * **Structural SIMilarity - SSIM**
-    Le Structural SIMilarity
+    Le Structural SIMilarity, contrairement au MSE et au PSNR qui comparent les images pixel par
+    pixel, SSIM mesure la similarité de structure entre les deux images. La notion de structure est
+    l'idée que les pixels ont une forte interdépendance entre eux en particulier quand ils sont
+    proches.
+
+    $$ SSIM(x, y) = \frac{(2\mu_x\mu_y + c_1)(2\sigma_{xy}+ c_2)}{(\mu^2_x + \mu^2_y + c_1)(\sigma^2_x + \sigma^2_y + c_2)} $$
+
+  * $\mu_{x}$ la moyenne de x;
+  * $\mu_{y}$ la moyenne de y;
+  * $\sigma^2_{x}$ la variance de x;
+  * $\sigma^2_{y}$ la variance de y;
+  * $\sigma_{xy}$ la covariance de x et y;
+  * $c_{1}=(k_{1}L)^2$, $c_{2}=(k_{2}L)^2$ deux variables pour stabiliser la division avec des
+    faibles denominateurs;
+  * $L$ la gamme dynamique des valeurs des pixels (généralement $2^{#bits par pixel} - 1); 
+  * $k_1=0.01$ et $k_2=0.03$ par défaut.
 
 
 # Étude de l'implémentation
@@ -112,6 +159,7 @@ de 769Kb pour TV, 188Kb pour FAN et 254Kb pour EFAN.
 # Sources 
 * [Review of Different Inpainting Algorithms - International Journal of Computer Applications, Décembre 2012](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.303.5459&rep=rep1&type=pdf)
 * [What is the difference between image super resolution and image scaling - Quora, 18 Décembre 2014](https://www.quora.com/What-is-the-difference-between-image-superresolution-and-image-scaling)
+* [Demosaicing](https://ngi-user-guide.readthedocs.io/en/latest/demosaicing/)
 * [Measures of image quality -  Todd Veldhuizen, 16 Janvier 1998](http://homepages.inf.ed.ac.uk/rbf/CVonline/LOCAL_COPIES/VELDHUIZEN/node18.html)
 * [Mean squared error - Wikipedia](https://en.wikipedia.org/wiki/Mean_squared_error)
 * [Peak signal-to-noise ratio - Wikipedia](https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio)
