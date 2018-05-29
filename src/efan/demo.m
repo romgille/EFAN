@@ -20,7 +20,7 @@ close all;
 
 img = imread('../../img/lena.png');
 
-percentage = 0.01;%choose percentage of regained pixels
+percentage = 0.05;%choose percentage of regained pixels
 
 s = size(img);
 sz = s(1)*s(2);

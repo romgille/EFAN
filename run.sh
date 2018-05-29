@@ -22,7 +22,6 @@ if [ $# -eq 0 ]; then
     echo "------------------------------------------------------------"
 fi
 
-
 if [[ $1 == "clean" ]]; then
     echo "---------------------------------------------"
     echo "-----Removing old outputs and make clean-----"
@@ -49,19 +48,19 @@ if [[ $1 == "tv" || $1 == "all" ]]; then
 
     if [ $# -eq 2 ]; then
         # create the random mask of pixels with 0.01% of the image
-        ./randmask Bernoulli:0.01 $IMG/$2 $IMG/mask.png
+        ./randmask Bernoulli:0.05 $IMG/$2 $IMG/mask.png
 
         # apply the mask on masked.png
         ./applymask $IMG/$2 $IMG/mask.png $IMG/masked.png
     else
         # create the random mask of pixels with 0.01% of the image
-        ./randmask Bernoulli:0.01 $IMG/lena.png $IMG/mask.png
+        ./randmask Bernoulli:0.05 $IMG/lena.png $IMG/mask.png
 
         # apply the mask on masked.png
         ./applymask $IMG/lena.png $IMG/mask.png $IMG/masked.png
 
     fi
-    ./tvinpaint $IMG/mask.png 100 $IMG/masked.png $OUT/lena_tv.bmp
+    ./tvinpaint $IMG/mask.png 1e3 $IMG/masked.png $OUT/lena_tv.bmp
 
     cd ../..
 fi
