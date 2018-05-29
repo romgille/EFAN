@@ -180,7 +180,7 @@ int Inpaint(image u, image f, image D, num Lambda)
             D.Data[n] = Lambda;    /* Outside of the inpainting domain */
     
     TvRegSetVaryingLambda(Opt, D.Data, D.Width, D.Height);
-    TvRegSetMaxIter(Opt, 250);
+    TvRegSetMaxIter(Opt, 10000);
     TvRegSetTol(Opt, (num)1e-5);
     
     /* TvRestore performs the split Bregman inpainting */
