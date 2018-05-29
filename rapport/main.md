@@ -70,6 +70,45 @@ finale, et la complexité de l'algorithme est indépendante de l'état de dété
 
 
 # Expérimentations
+
+Lors de nos expérimentations, nous avons découvert de grandes différences de
+temps d'exécution et de résultat avec les différents programmes.
+Nos tests ont été faits sur les trois programmes avec l'image suivante ainsi
+qu'un taux de $95\%$ de pixels manquant.
+
+![Comparison of Original, TV, FAN, EFAN with 95% pixels missing](img/comparison.png)
+
+## Temps d'exécution
+
+On observe un temps d'exécution assez long de quatres secondes pour
+l'utilisation du programme TV qui s'explique par un nombre de passage
+élevé sur l'image.
+Pour les programmes FAN et EFAN, les temps d'exécution sont en dessous de la
+seconde de traitement. En effet, le programme FAN exécute la tâche en quinze
+centièmes de secondes ce qui semble impressionnant vue les quatres secondes
+du précédent programme. Cependant, le programme EFAN le surpasse largement en
+effectuant l'algorithme en trois centièmes de secondes.
+
+## Rendu de la complétion
+
+Pour ce qui est du rendu visuel, on voit une nette différence entre les trois
+résultats. Nous pouvons observer que le temps de traitement des différents
+programmes n'impacte pas la qualité visuelle finale. Sur le résultat de TV,
+les traits sont grossiers. Les couleurs sont globalements présentes mais il y a
+une perte importante de données de l'image.
+FAN offre un résultat plus détaillé, on perçoit mieux les traits du visage.
+Néanmoins, une impression de flou persiste et retire nombre de détails tels que
+les plis du chapeau.
+Pour finir, EFAN est le programme qui offre le rendu le plus intéressant, tous
+les détails ne sont pas présents mais les traits du visages sont bien présents.
+
+## Taille des fichiers finaux
+
+Finalement, de même que le temps, la taille des fichiers de sortie des
+programmes ne révèlent pas spécialement la qualité finale du rendu visuel.
+Avec les mêmes caractéristiques que précédemment, nous avons obtenu des tailles
+de 769Kb pour TV, 188Kb pour FAN et 254Kb pour EFAN.
+
 # Sources 
 * [Review of Different Inpainting Algorithms - International Journal of Computer Applications, Décembre 2012](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.303.5459&rep=rep1&type=pdf)
 * [What is the difference between image super resolution and image scaling - Quora, 18 Décembre 2014](https://www.quora.com/What-is-the-difference-between-image-superresolution-and-image-scaling)
