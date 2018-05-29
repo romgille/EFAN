@@ -40,7 +40,7 @@ tic
 outimg = fan_func(img,uint8(M));% FAN (EFAN is about twice as fast)
 toc
 %--------------------------------------------------------------------------
-imwrite(outimg, '../../out/lena_fan.png');
+imwrite(outimg, '../../out/out_fan.png');
 imshow(outimg);
 
 exit;
