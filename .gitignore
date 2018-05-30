@@ -1,5 +1,9 @@
 *.pdf
 *.mexa64
+rapport/main.aux
+rapport/main.log
+rapport/main.out
+rapport/main.toc
 out/*
 img/mask.png
 img/masked.png
