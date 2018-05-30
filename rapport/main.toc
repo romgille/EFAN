@@ -1,0 +1,15 @@
+\contentsline {section}{Synth\IeC {\`e}se de l'article}{2}{section*.2}
+\contentsline {subsection}{Application de l'algorithme EFAN}{2}{section*.3}
+\contentsline {section}{Applications}{3}{section*.4}
+\contentsline {subsection}{Super-r\IeC {\'e}solution}{3}{section*.5}
+\contentsline {subsection}{D\IeC {\'e}matri\IeC {\c c}age}{3}{section*.6}
+\contentsline {section}{Mesures de la qualit\IeC {\'e} d'une image}{4}{section*.7}
+\contentsline {subsection}{Mean-Squared Error (MSE)}{4}{section*.8}
+\contentsline {subsection}{Peak Signal-to-Noise Ratio (PSNR)}{4}{section*.9}
+\contentsline {subsection}{Structural SIMilarity (SSIM)}{4}{section*.10}
+\contentsline {section}{\IeC {\'E}tude de l'impl\IeC {\'e}mentation}{5}{section*.11}
+\contentsline {section}{Exp\IeC {\'e}rimentations}{6}{section*.12}
+\contentsline {subsection}{Temps d'ex\IeC {\'e}cution}{6}{section*.13}
+\contentsline {subsection}{Rendu de la compl\IeC {\'e}tion}{6}{section*.14}
+\contentsline {subsection}{Taille des fichiers finaux}{6}{section*.15}
+\contentsline {section}{Sources}{7}{section*.16}
