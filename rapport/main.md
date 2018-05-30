@@ -59,6 +59,8 @@ publiée par l'International Conference on Computer Vision (ICCV) de 2009.
 Dans ce cas, pour effectuer une super résolution, une duplication des pixels
 est effectuée à partir d'une seule et même image.
 
+https://s14-eu5.startpage.com/cgi-bin/serveimage?url=https%3A%2F%2Fwww.dpreview.com%2Ffiles%2Fp%2Farticles%2F5972459795%2Fgoogle4.png&sp=91f1001c305e8c8a93a4151a732367e7
+
 ![Exemple d'utilisation de la Super-résolution pour augmenter la résolution de l'image d'origine](https://s14-eu5.startpage.com/cgi-bin/serveimage?url=https%3A%2F%2Fwww.dpreview.com%2Ffiles%2Fp%2Farticles%2F5972459795%2Fgoogle4.png&sp=91f1001c305e8c8a93a4151a732367e7)
 
 \newpage
@@ -70,7 +72,7 @@ restaurer une image en couleur à partir des échantillons de couleurs incomplet
 émis par un capteur d'image. 
 
 ![Exemple d'utilisation du dématriçage pour corriger les artefacts dans l'image d'origine](https://ngi-user-guide.readthedocs.io/en/latest/images/bayer_demosaic_detail.png)
-
+https://ngi-user-guide.readthedocs.io/en/latest/images/bayer_demosaic_detail.png
 \newpage
 
 # Mesures de la qualité d'une image
